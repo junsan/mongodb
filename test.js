@@ -16,11 +16,14 @@ const fruitSchema = new mongoose.Schema({
 
 const Fruit = mongoose.model('Fruit', fruitSchema)
 
-const fruit = new Fruit({
-    rating: 18
-})
+// const fruit = new Fruit({
+//     rating: 18
+// })
 
-fruit.save()
+// fruit.save()
+
+// Fruit.findOneAndUpdate({_id: "65dfe3a6b616af0b070a7ad5"} , { name: "Pine"})
+const query = { _id: "65dfe3a6b616af0b070a7ad5" }
 
 const banana = new Fruit({
     name: "Banana",
@@ -34,14 +37,14 @@ const orange = new Fruit({
 
 // Fruit.insertMany([banana, orange])
 
-Fruit.find({}, 'name').then(function(result) {
+// Fruit.find({}).then(function(result) {
 
-    mongoose.connection.close()
+//     mongoose.connection.close()
 
-    result.forEach(function(fruit) {
-        // console.log(fruit.name)
-    })
-})
+//     result.forEach(function(fruit) {
+//         console.log(fruit)
+//     })
+// })
 
 const personSchema = new mongoose.Schema({
     'name': String,
@@ -55,5 +58,16 @@ const person = Person({
     'age': 37
 })
 
+Person.findOneAndDelete({_id: '65decd2028cdb695109d5225'})
+
 // person.save()
+
+Person.find().then(function(result) {
+
+    mongoose.connection.close()
+
+    result.forEach(function(fruit) {
+        console.log(fruit)
+    })
+})
 

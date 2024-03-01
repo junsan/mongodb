@@ -10,7 +10,7 @@ async function run() {
     const database = client.db('fruitsDB');
     const collection = database.collection('fruits');
 
-    // await fruits.insertMany([
+    // await collection.insertMany([
     //     { name: 'Apple' },
     //     { name: 'Banana' }
     // ])
