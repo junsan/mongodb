@@ -54,13 +54,17 @@ const personSchema = new mongoose.Schema({
 const Person = mongoose.model('Person', personSchema)
 
 const person = Person({
-    'name': 'John',
+    'name': 'Jay',
     'age': 37
 })
 
-Person.findOneAndDelete({_id: '65decd2028cdb695109d5225'})
+Person.collection.deleteOne( { _id: "65e1a38b93d279da2681d3bd" } )
 
 // person.save()
+
+// Person.collection.insertOne({ name: "Jun", age: 38})
+
+// Person.collection.updateOne({ _id: "65e19e9c1ed52cd47d3e80ee" }, { $set: {name: "Jun"}})
 
 Person.find().then(function(result) {
 
@@ -70,4 +74,6 @@ Person.find().then(function(result) {
         console.log(fruit)
     })
 })
+
+
 
